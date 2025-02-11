@@ -1,3 +1,4 @@
+package Codes;
 // === Note ===
 
 /*
@@ -19,9 +20,9 @@
 
 public class Main {
     // JVM by default calls main() method as a default
-    // public static void main(String[] args){
-    //     System.out.println("Hey from MAIN");
-    // }
+    public static void main(String[] args){
+        System.out.println("Hey from MAIN");
+    }
 
     // If we want to execute code without main() we can use 
     static {
