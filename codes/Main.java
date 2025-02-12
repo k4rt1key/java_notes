@@ -1,4 +1,4 @@
-package Codes;
+package codes;
 // === Note ===
 
 /*
@@ -22,6 +22,26 @@ public class Main {
     // JVM by default calls main() method as a default
     public static void main(String[] args){
         System.out.println("Hey from MAIN");
+        address();
+    }
+
+    public static void address(){
+        Integer i = 10;
+        Integer j = null;
+         
+        int hashI = System.identityHashCode(i);
+        int hashJ = System.identityHashCode(j);
+
+        
+        System.out.println(hashI + "()" + hashJ);
+        if(hashI == 0 || hashJ == 0) {
+            System.out.println("Either hashI or hashJ is null");
+        }
+        else if(hashI == hashJ){
+            System.out.println("Both objects are stored at same memory address");
+        } else {
+            System.out.println("Both objects are stored at different memory address");
+        }
     }
 
     // If we want to execute code without main() we can use 

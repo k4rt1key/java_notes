@@ -1,4 +1,4 @@
-package Codes;
+package codes;
 /*
 * class DiffFileName is not public so it will not give any error upon having diff filename and classname
 * after running ``` javac Filename.java ``` command 
