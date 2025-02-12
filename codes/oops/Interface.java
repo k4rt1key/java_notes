@@ -47,9 +47,12 @@ interface CounterInterface {
     }
 }
 
+
+
 class Counter implements CounterInterface {
 
     int count = CounterInterface.count;
+
     @Override
     public void increment() {
         count++;
@@ -59,7 +62,7 @@ class Counter implements CounterInterface {
     public void decrement() {
        count--;
     }
-    
+
     @Override
     public void getCountDefault() {
         // CounterInterface.super.getCountDefault();
