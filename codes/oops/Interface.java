@@ -1,5 +1,13 @@
 package codes.oops;
 
+
+public class Interface {
+    public static void main(String[] args) {
+        Counter c = new Counter();
+        c.getCountDefault();
+    }   
+}
+
 /*
  * Defination : defines contract which contains abstract methods, default methods,  static methods
  * Use for archiving abstraction and multiple inheritance
@@ -20,13 +28,49 @@ package codes.oops;
  * - Interface can extend other interfaces using **extend** keyword
  * 
  */
-interface UserInterface {
-    int id = 10;
+interface CounterInterface {
+    // constants
+    int count = 10;
+
+    // abstract method
+    void increment();
+    void decrement();
+
+    // static method
+    static void getCount(){
+        System.out.println(count);
+    }
+
+    // default method
+    default void getCountDefault(){
+        System.out.println(count);
+    }
+}
+
+class Counter implements CounterInterface {
+
+    int count = CounterInterface.count;
+    @Override
+    public void increment() {
+        count++;
+    }
+
+    @Override
+    public void decrement() {
+       count--;
+    }
+    
+    @Override
+    public void getCountDefault() {
+        // CounterInterface.super.getCountDefault();
+        System.out.println("INSIDE GETCOUNTDEFAULT OVERRIDEN METHOD");
+    }
+
+    static void getCount(){
+        System.out.println("INSIDE COUNTER CLASS");
+        System.out.println(CounterInterface.count);
+    }
+
 
 }
 
-public class Interface {
-    public static void main(String[] args) {
-        System.out.println("Main");
-    }   
-}
