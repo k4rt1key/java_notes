@@ -5,8 +5,7 @@ import java.io.IOException;
 import java.sql.SQLClientInfoException;
 
 class A extends Exception{
-    void funa() throws IOException{}
-    void funb() throws Exception{}
+    
 }
 
 class B extends A {
