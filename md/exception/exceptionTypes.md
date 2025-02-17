@@ -35,8 +35,6 @@
 - NoSuchElementException
 - InputMismatchException
 - NegativeArraySizeException
-- StackOverflowError
-- OutOfMemoryError
 
 # Errors (Serious Issues, usually JVM-related)
 

@@ -9,11 +9,12 @@ Q: X, 24, 23, 22, 21, ( STREAMS 20, 19, 18), X, 16, 15, X, 13, X, X, 10, X, X, X
 # SAT-SUN TOPICS
 
 1. Practicals ( * )
-2. Exception Handling in depth ( DONE )
+2. Exception Handling in depth
     - Throwable
     - Exception & it's types
     - Types of Exceptions 
     - Syntax edge cases
+    - types of checked exception ( )
 3. throws keyword ( DONE )
     - How it behaves in inheritance
     - What if we dont catch exception 
