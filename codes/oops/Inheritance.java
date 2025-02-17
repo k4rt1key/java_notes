@@ -78,7 +78,7 @@ class Parent extends GrandParent {
         System.out.println("Parent Func");
     }
 
-    protected void getId() {
+    final void getId() {
         System.out.println("Parent getId method == " + id);
     }
 
@@ -95,9 +95,9 @@ class Child extends Parent {
 
     static void hey(){}
 
-    public void getId() {
-        super.getId();
-    }
+    // public void getId() {
+    //     super.getId();
+    // }
 }
 
 

@@ -53,17 +53,17 @@ try {
     throw new RuntimeException();
 }
 finally {
-    // this will work and execute code inside finally
-    // because we are throwing RuntimeException
-}
 
+}
+// unreachable statement ( compilation error )
+        
+// ==============================================
 
 try {
-    throw new Exception();
+    throw new Exception(); // Unhandled Exception compilation error
 }
 finally {
-    // this will not work and not execute code inside finally
-    // because we are throwing Exception
+   
 }
 ```
 
