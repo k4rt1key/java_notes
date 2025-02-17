@@ -84,6 +84,7 @@ public class Test {
 
 - Due to uncertinity in assignment of model string 
 - sout(model) will give error
+- but if we do String model = null it will not throw any errors
 
 ## Q6
 
