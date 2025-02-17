@@ -47,6 +47,8 @@ public class Main {
     // If we want to execute code without main() we can use 
     static {
         System.out.println("Hey from STATIC BLOCK");
+        // System provides access to system resources
+        // It has static methods 
         // System.exit(0);
     }
 

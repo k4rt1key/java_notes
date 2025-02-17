@@ -36,9 +36,8 @@ public class Inheritance {
          * This is same as Recursive call
          * 
          */
-        Child x = new Child();
-        // System.out.println(x.id);
-        System.out.println(x.id);
+        Parent x = new Child();
+        Parent.func();
 
     }
 }
@@ -75,9 +74,15 @@ class Parent extends GrandParent {
         System.out.println("Constructor of Parent");
     }
 
+    static void func(){
+        System.out.println("Parent Func");
+    }
+
     protected void getId() {
         System.out.println("Parent getId method == " + id);
     }
+
+    void hey(int a){}
 }
 
 
@@ -87,6 +92,8 @@ class Child extends Parent {
     Child(){
         System.out.println("Constructor of Child");
     }
+
+    static void hey(){}
 
     public void getId() {
         super.getId();

@@ -3,7 +3,7 @@ package codes;
 public class SwitchCase {
 
     public static void main(String[] args) {
-        
+        switchCase();
     }
 
     /*
@@ -31,28 +31,30 @@ public class SwitchCase {
      */
 
     static void switchCase() {
-        int x = 4;
+
+        int x = 3;
 
         // We can't use float, double, boolean, Object in switch case
         switch (x) {
+            default:
+                System.out.println("DEFULT");
             case 0:
                 System.out.println("ZERO");
                 // break;
             case 1:
                 System.out.println("ONE");
-                // break;
+                break;
             case 2:
                 System.out.println("TWO");
                 // break;
             case 3:
                 System.out.println("THREE");
                 // break;
-            default:
-                System.out.println("DEFAULT");
+            // default:
+            //     System.out.println("DEFAULT");
                 // break;
         }
 
-        System.out.println("INT SWITCH CASE CALLED");
 
     }
 
