@@ -58,7 +58,7 @@ public class Q4 {
             // HOW TO READ FILE
             FileInputStream input = new FileInputStream("input.txt");
             int byteData;
-            
+
             while( (byteData=input.read()) != -1){
                 System.out.print((char)byteData);
             }

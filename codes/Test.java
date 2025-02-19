@@ -3,9 +3,10 @@ package codes;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.lang.reflect.Field;
 import java.sql.SQLException;
 
-class Test {
 
 //    static {
 //        System.out.println("static block 1");
@@ -41,13 +42,16 @@ class Test {
 //        return 10;
 //    }
 
-    public static void main(String[] args)  throws  CloneNotSupportedException {
 
-        try{
-            throw new RuntimeException();
-        } finally {
-            System.out.println("s");
-        }
+//        StringBuffer sb = new StringBuffer();
+//
+//        sb.append("ababababababababab");
+//        System.out.println(sb.toString() + "...Capacity:" + sb.capacity() + "...Length:" + sb.length());
+//        sb.setLength(0); // for clearing out sb
+//        System.out.println(sb.toString() + "...Capacity:" + sb.capacity() + "...Length:" + sb.length());
+//        sb.append("small");
+//        System.out.println(sb.toString() + "...Capacity:" + sb.capacity() + "...Length:" + sb.length());
+
 //        Demo d = new Demo();
 //        Demo d2 = (Demo) d.clone();
 //
@@ -65,15 +69,73 @@ class Test {
 //
 //        System.out.println("d2.a => " + d2.a); // this will not updated to 20 because primitive data is copied by value not reference
 //        System.out.println("d2.arr[0] => " + d2.arr[0]); // this will be changed to 11
+
+
+class Base {
+    int id = 1000; //Line n1
+
+    Base() {
+        Base(); //Line n2
+    }
+
+    void Base() { //Line n3
+        System.out.println(++id); //Line n4
     }
 }
 
-class Demo implements Cloneable {
-    int a = 10;
-    int[] arr = new int[]{1,2,3,4,5,6,7};
+class Derived extends Base {
+    int id = 2000; //Line n5
 
-    protected Object clone() throws CloneNotSupportedException{
-        return super.clone();
+    Derived() {} //Line n6
+
+    void Base() { //Line n7
+        System.out.println(--id); //Line n8
+    }
+}
+
+
+interface M {
+    static int log = 10;
+    public static void log() {
+        System.out.println("M");
+    }
+}
+
+interface Blogger {
+    default void blog() throws Exception {
+        System.out.println("GENERIC");
+    }
+}
+
+class TravelBlogger implements Blogger {
+    public void blog() {
+        System.out.println("TRAVEL");
+    }
+}
+interface Perishable1 {
+    default int maxDays() {
+        return 1;
+    }
+}
+
+interface Perishable2 extends Perishable1 {
+    default int maxDays() {
+        return 2;
+    }
+}
+
+class Milk implements Perishable2, Perishable1 {}
+
+class A {
+    void sum() throws Exception{}
+}
+
+class B extends  A {
+    void sum() throws FileNotFoundException{}
+}
+public class Test {
+    public static void main(String[] args) {
+        System.out.println(Boolean.parseBoolean("trUe"));
     }
 }
 

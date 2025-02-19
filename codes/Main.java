@@ -22,10 +22,14 @@ public class Main {
     // JVM by default calls main() method as a default
     public static void main(String[] args){
         System.out.println("Hey from MAIN");
-        address();
+        Integer[] arr = new Integer[1];
+        address(arr);
+        int i = 1;
+        Integer j = 1;
     }
 
-    public static void address(){
+    public static void address(Integer[] a){
+
         Integer i = 10;
         Integer j = null;
          

@@ -55,12 +55,12 @@ try {
 finally {
 
 }
-
 // unreachable statement ( compilation error )
+        
 // ==============================================
 
 try {
-    throw new Exception(); // Unhandled Exception
+    throw new Exception(); // Unhandled Exception compilation error
 }
 finally {
    
@@ -198,7 +198,7 @@ With a child reference, the compiler uses the child's declared exceptions:
 ```java
 Child c = new Child();
 try {
-    c.methodB();  // Compile-time: must handle IOException (not Exception)
+    c.methodB();  
 } catch (IOException e) { }  // This is sufficient
 ```
 

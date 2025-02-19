@@ -19,3 +19,10 @@ String s = sb.toString();
 // but string is not stored in scp it's in the heap
 // for storing string in scp we need to call .intern()
 ```
+
+## Similarities between string builder and buffer
+
+- Both use the same default capacity (16)
+- Both expand their capacity in the same way
+- Both handle setLength() the same way
+- Both maintain length and capacity separately
