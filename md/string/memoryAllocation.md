@@ -29,10 +29,9 @@ String fullName = new String(name + surname); // two in heap, one for new String
 // this will not store kartikeyvaghasiya ( name + surname ) into string pool 
 // because string created using concat, substring will not goes into string pool
 // it will be stored on heap until we run .intern() method;
-String fullName2 = name + surname // one in heap, for name + surname
-// this also will not store kartikeyvaghasiya  ( name + surname ) into string pool
-// because string created using concat, substring will not goes into string pool
-// it will be stored on heap until we run .intern() method; 
+String fullName2 = name + surname; // one in heap, for name + surname
+// this will  store kartikeyvaghasiya  ( name + surname ) into string pool
+// due to final keyword
 System.out.println(fullName);
 
 final String s1 = "hey";

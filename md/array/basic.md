@@ -47,8 +47,8 @@ int[] incorrect = new int[3]{1,2,3}; // if we mention {1,2,3} we can't specify s
 
 ```java
 Integer[] IntegerArr = new Integer[3]; // valid
-int[] intArr = new Integer[3];
 
+int[] intArr = new Integer[3]; // compilation error
 Integer[] IntegerArr2 = new int[3]; // compilation error 
 int[] intArr2 = new Integer[3]; // compilation error  
 ```

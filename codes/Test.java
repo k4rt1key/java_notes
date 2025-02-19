@@ -135,7 +135,8 @@ class B extends  A {
 }
 public class Test {
     public static void main(String[] args) {
-        System.out.println(Boolean.parseBoolean("trUe"));
+        int[] intArr = new Integer[3];
+
     }
 }
 

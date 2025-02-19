@@ -10,7 +10,7 @@ public class Test {
              System.out.println(x);
              x++;
      }
-}
+}   
 ```
 
 - While or if else without {} will be interpreted as 
