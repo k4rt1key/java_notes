@@ -8,7 +8,6 @@ public class Q7 {
         String s4 = "a" + "b";
 
 
-
         System.out.println(s3 == s4);
         System.out.println((s1+s2) == s3 );
         System.out.println((s1+s2) == s4 );

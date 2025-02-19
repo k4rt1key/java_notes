@@ -32,9 +32,9 @@ public class SwitchCase {
 
     static void switchCase() {
 
-        int x = 3;
+        int x = 10;
 
-        // We can't use float, double, boolean, Object in switch case
+        // We can't use float, long, double, boolean, Object in switch case
         switch (x) {
             default:
                 System.out.println("DEFULT");
@@ -43,7 +43,7 @@ public class SwitchCase {
                 // break;
             case 1:
                 System.out.println("ONE");
-                break;
+//                break;
             case 2:
                 System.out.println("TWO");
                 // break;

@@ -89,3 +89,13 @@ class MyClass extends A {
     }
 }
 ```
+
+## Types of interface 
+
+### 1 marker interface 
+- Interface with no methods and fields
+
+## 2 functional interface 
+- Interface with only one abstract method
+- It means it can only have one abstract method
+- but can have N number of default methods

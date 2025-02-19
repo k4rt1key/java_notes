@@ -120,9 +120,9 @@ public class Types {
          */
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException{
 
-
-
+        Object s = Class.forName("String");
     }
 }
+

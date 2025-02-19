@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.sql.SQLException;
+import java.util.function.Predicate;
 
 
 //    static {
@@ -70,23 +71,39 @@ import java.sql.SQLException;
 //        System.out.println("d2.a => " + d2.a); // this will not updated to 20 because primitive data is copied by value not reference
 //        System.out.println("d2.arr[0] => " + d2.arr[0]); // this will be changed to 11
 
+
 class A {
-    A() throws Exception{}
-    void sum() throws Exception{}
-}
-
-
-class B extends  A {
-    B() throws Exception{}
-    void sum() throws FileNotFoundException{}
-}
-
-public class Test {
-    public static void main(String[] args) {
-
+    void func(int a){
+        System.out.println("A" + a);
     }
 }
 
+
+class Test{
+
+    class A{
+        void func(int a){
+            System.out.println(a);
+        }
+    }
+
+//    class B{
+//        void func(int a){
+//            System.out.println(a);
+//        }
+//    }
+
+    void m(){
+        A a = new A();
+        a.func(2);
+    }
+
+    public static void main(String[] args) {
+        Test t = new Test();
+        t.m();
+    }
+
+}
 /*
  * === 1 ===
  * String a = "1"+"2";
