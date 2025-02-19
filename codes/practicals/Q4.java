@@ -49,7 +49,7 @@ public class Q4 {
         }
     */
 
-    fileInputOutputStream();
+
         }
 
     
@@ -68,6 +68,35 @@ public class Q4 {
             FileOutputStream outputStream = new FileOutputStream("output.txt", true); // true is for append
             outputStream.write("\nHEY".getBytes());
             outputStream.close();
+
+        } catch(FileNotFoundException fe){
+            System.out.println(fe.getMessage());
+        } catch(IOException ie){
+            System.out.println(ie.getMessage());
+        }
+    }
+
+    public static void fileInputOutputStream2() {
+        try{
+            // HOW TO READ FILE
+            FileInputStream input = new FileInputStream("input.txt");
+            int byteData;
+
+            byte[] byteDataArr;
+
+            while( (byteDataArr=input.readNBytes(10)).length > 0){
+                System.out.println("----");
+                for(byte bb: byteDataArr){
+                    System.out.println((char)bb);
+                }
+                System.out.println("----");
+            }
+            input.close();
+
+//            // HOW TO WRITE FILE
+//            FileOutputStream outputStream = new FileOutputStream("output.txt", true); // true is for append
+//            outputStream.write("\nHEY".getBytes());
+//            outputStream.close();
 
         } catch(FileNotFoundException fe){
             System.out.println(fe.getMessage());
