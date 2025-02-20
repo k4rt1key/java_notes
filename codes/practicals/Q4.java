@@ -49,14 +49,14 @@ public class Q4 {
         }
     */
 
-
+        fileInputOutputStream();
         }
 
     
     public static void fileInputOutputStream() {
         try{
             // HOW TO READ FILE
-            FileInputStream input = new FileInputStream("input.txt");
+            FileInputStream input = new FileInputStream("/home/kartikey/Downloads/ideaIC-2024.3.3.tar.gz");
             int byteData;
 
             while( (byteData=input.read()) != -1){
@@ -129,9 +129,11 @@ public class Q4 {
     public static void fileReaderWriter() {
         try{
             // HOW TO READ
-            FileReader reader = new FileReader("input.txt");
+            FileReader reader = new FileReader("/home/kartikey/Downloads/ideaIC-2024.3.3.tar.gz");
+
             int charData;
-            
+            FileInputStream fs = new FileInputStream("input.txt");
+
             while( (charData = reader.read()) != -1){
                 System.out.print((char) charData);
             }

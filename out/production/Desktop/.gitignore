@@ -1,4 +1,4 @@
 *.class
-todo.md
-out
-.idea
+./todo.md
+out/
+.idea/
