@@ -2,14 +2,11 @@ package codes;
 
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.sql.SQLException;
-import java.util.Scanner;
 import java.util.function.Predicate;
-import java.util.stream.Stream;
 
 
 //    static {
@@ -75,42 +72,40 @@ import java.util.stream.Stream;
 //        System.out.println("d2.arr[0] => " + d2.arr[0]); // this will be changed to 11
 
 
-
-
-
-interface InfA {
-    void func();
-}
-
-interface  InfB {
-    default void func(){
-        System.out.println("b func default interface");
-    }
-}
-
-
 class A {
-    void func(int a){
-        System.out.println("a func");
+    static void func(int a){
+        System.out.println("A" + a);
     }
 }
+
+
 
 class B extends A {
-    static void func(){
-        System.out.println("b func");
+    static void func(long a){
+        System.out.println("A" + a);
     }
 }
 
-public class Test {
+class Test{
+
+
+//    class B{
+//        void func(int a){
+//            System.out.println(a);
+//        }
+//    }
+
+    void m(){
+        A a = new A();
+        
+    }
+
     public static void main(String[] args) {
-        A objA = new B();
-        long a = 10;
-        float b = a ;
-        System.out.println(b);
+        Test t = new Test();
+        t.m();
     }
+
 }
-
-
 /*
  * === 1 ===
  * String a = "1"+"2";
