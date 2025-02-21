@@ -48,3 +48,25 @@ Q: 9
     - when it will cause Exception
 
 - NIO
+
+
+============== ASSESMENT =====================
+
+BigInt
+BigDecimal
+long to float
+0x7
+anon arrays
+when to use interface when to use abstract class
+tag interface
+extends and implements
+default imported package
+who catches exception
+finalize
+why we can thorow Error
+stream and parralel stream
+record class 
+string to char arr
+string format
+interface
+rules for protected variables

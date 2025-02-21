@@ -1,12 +1,14 @@
 package codes;
 
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.sql.SQLException;
+import java.util.*;
 import java.util.function.Predicate;
+
+import java.util.ArrayList;
 
 
 //    static {
@@ -73,6 +75,7 @@ import java.util.function.Predicate;
 
 
 class A {
+
     static void func(int a){
         System.out.println("A" + a);
     }
@@ -81,6 +84,8 @@ class A {
 
 
 class B extends A {
+    B(){
+    }
     static void func(long a){
         System.out.println("A" + a);
     }
@@ -97,12 +102,16 @@ class Test{
 
     void m(){
         A a = new A();
+        List l = new ArrayList<>();
         
     }
 
     public static void main(String[] args) {
-        Test t = new Test();
-        t.m();
+        String[] str = new String[10];
+        String[] str2 = new String[]{"a"};
+        
+
+
     }
 
 }
