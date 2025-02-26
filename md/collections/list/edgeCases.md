@@ -13,5 +13,6 @@ List<Integer> l = Arrays.asList(null); // it will give null pointer exception
 
 ``` 
 
-- `NullPointerException`
+- `NullPointerException` because list is **unmutable** and we assigned ```l = null``` during ```Array.asList(null)```
+- It will assign ```l = null``` 
 

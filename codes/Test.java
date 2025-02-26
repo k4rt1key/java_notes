@@ -4,11 +4,19 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.math.BigInteger;
 import java.sql.SQLException;
 import java.util.*;
+import java.util.concurrent.*;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.function.Predicate;
 
+import javax.management.RuntimeErrorException;
+
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 
 //    static {
@@ -73,47 +81,38 @@ import java.util.ArrayList;
 //        System.out.println("d2.a => " + d2.a); // this will not updated to 20 because primitive data is copied by value not reference
 //        System.out.println("d2.arr[0] => " + d2.arr[0]); // this will be changed to 11
 
-
 class A {
+    @Override
+    protected void finalize(){
 
-    static void func(int a){
-        System.out.println("A" + a);
     }
 }
 
-
-
-class B extends A {
-    B(){
-    }
-    static void func(long a){
-        System.out.println("A" + a);
-    }
-}
-
-class Test{
-
-
-//    class B{
-//        void func(int a){
-//            System.out.println(a);
-//        }
-//    }
-
-    void m(){
-        A a = new A();
-        List l = new ArrayList<>();
-        
-    }
-
+class Test {
     public static void main(String[] args) {
-        String[] str = new String[10];
-        String[] str2 = new String[]{"a"};
-        
 
+//        Map<Integer,Integer> hm = new HashMap<>();
+//        hm.put(10, 20);
+//        hm.put(20,30);
+//        hm.put(null, null);
+//        hm.put(null, null);
+//        System.out.println(hm);
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
+        CopyOnWriteArrayList<Integer> s = new CopyOnWriteArrayList<>();
+        s.add(1);
+        s.add(2);
+        s.add(3);
+        s.add(1);
+        s.add(1);
+        s.add(null);
+        s.add(null);
+        System.out.println(s);
+        Map<Integer, Integer> mp = Map.of(1,1,2,1);
+        System.out.println(mp);
+        ConcurrentLinkedQueue<Integer> deque = new ConcurrentLinkedQueue<>();
+        HashMap<Integer,Integer> nm = new HashMap<Integer, Integer>();
 
     }
-
 }
 /*
  * === 1 ===

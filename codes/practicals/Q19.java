@@ -11,6 +11,7 @@ public class Q19 {
                         .toList();
         for(String s : res){
             System.out.println(s);
+            Vector<Integer> v;
         }
     }
 }
