@@ -1,19 +1,28 @@
 package codes.threading;
 
+// NOTE
+/*
+
+If we declare static field of class synchronous
+it will lock whole class
+
+ */
 class Student {
     private String name;
     private int age;
+    static int classId;
 
     Student(String name, int age){
         this.name = name;
         this.age = age;
     }
 
-    public int getAge(){
+    // synchronized keyword uses monitor lock by default
+    public synchronized int  getAge(){
         return this.age;
     }
 
-    public int incrementAge(){
+    public int incrementAge() throws InterruptedException {
         /*
         synchronized (name){
             // When you use synchronized (name), you're saying: "Any thread that wants to execute this code block must acquire the monitor lock associated with the name object."
@@ -24,11 +33,21 @@ class Student {
             this.age += 1;
         }
         */
+
         synchronized (this){
+            /*
+            if(this.age == 50){
+                System.out.println("inside thread age" + this.age);
+                this.wait();
+            }
+            */
+
             this.age++;
+
         }
         return age;
     }
+
 }
 
 class Task3 implements Runnable{
@@ -41,7 +60,11 @@ class Task3 implements Runnable{
     @Override
     public void run(){
         for(int i = 0; i < 1000; i++){
-            s.incrementAge();
+            try {
+                s.incrementAge();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }
@@ -56,6 +79,22 @@ public class SynchronizedKeyword {
         t2.start();
         t3.start();
 
+        /*
+        while(true) {
+            Thread.sleep(100);
+            System.out.println(s.getAge());
+            System.out.println("t1 notifyAll called");
+            if(s.getAge() >= 50){
+                synchronized (s) {
+                    s.notifyAll();
+                }
+                break;
+            }else{
+                break;
+            }
+        }
+        */
+
         t1.join();
         t2.join();
         t3.join();
@@ -63,3 +102,5 @@ public class SynchronizedKeyword {
         System.out.println(s.getAge());
     }
 }
+
+
