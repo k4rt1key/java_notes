@@ -36,6 +36,8 @@ public class DataPassing {
         Thread t1 = new Thread(task4);
         t1.start();
 
+        
+
         while(true){
             System.out.println(task4.getI());
             Thread.sleep(100);

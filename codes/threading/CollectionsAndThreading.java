@@ -5,7 +5,7 @@ import java.util.concurrent.*;
 
 class Collections{
 
-    private List<Integer> integerList = new ArrayList<>();
+    private List<Integer> arrayList = new ArrayList<>();
     private List<Integer> linkedList = new LinkedList<>();
     private List<Integer> stack = new Stack<>(); // Stack implements Vector class
 
@@ -31,7 +31,7 @@ class Collections{
     private IdentityHashMap<Integer,Integer> identityHashMap = new IdentityHashMap<>();
 
     private Object[] collectionArray = new Object[]{
-            integerList, // 0  THROWS CONCURRENT MODIFICATION EXCEPTION
+            arrayList, // 0  THROWS CONCURRENT MODIFICATION EXCEPTION
             linkedList, // 1  THROWS CONCURRENT MODIFICATION EXCEPTION
             stack, // 2  THROWS CONCURRENT MODIFICATION EXCEPTION
             priorityQueue, // 3  THROWS CONCURRENT MODIFICATION EXCEPTION
@@ -50,6 +50,7 @@ class Collections{
             concurrentSkipListMap, // 16
             identityHashMap // 17 THROWS CONCURRENT MODIFICATION EXCEPTION
     };
+
 
     public Object getCollection(int index){
         return collectionArray[index];
@@ -95,5 +96,12 @@ public class CollectionsAndThreading{
 
         // SPIT ITERATOR IS FAIL-SAFE SO IT WILL NOT THROW CONCURRENT MODIFICATION EXCEPTION
         // VECTOR CLASS IS SYNCHRONOUS BUT STILL THROWS CONCURRENT MODIFICATION EXCEPTION
+
+        // HASHTABLE VS HASHMAP
+        // SYNC - NO SYNC
+        // NOT ALLOWED NULL - ALLOWED NULL
+        // ENUMERATION FOR TRAVERSION - ITERATOR FOR TRAVERSAL
+
+
     }
 }
