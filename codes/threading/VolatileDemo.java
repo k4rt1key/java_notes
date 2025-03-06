@@ -8,7 +8,6 @@ class IntClass{
         System.out.println("waiting for i to become 1...");
         while(i != 1){
              Thread.sleep(10);
-            //
         }
         System.out.println("done waiting :)");
         return "i = " + i +", j = "+ j;
