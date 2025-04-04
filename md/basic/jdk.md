@@ -169,7 +169,7 @@
 
 1. **Mark & Sweep Algorithm**
    - **Minor GC (Young Generation)**
-     - Marks unreferenced objects
+     - Marks referenced objects
      - Moves surviving objects between Eden and Survival spaces
      - Updates object age counter
      - Promotes objects to Old Gen when age threshold reached
