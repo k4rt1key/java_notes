@@ -245,3 +245,49 @@
   - Dynamically sized
   - Better memory management
   - More flexible for class metadata
+ 
+## ZGC vs G1GC Comparison
+# ZGC (Z Garbage Collector)
+
+- Design Focus: Low latency garbage collector designed to minimize pause times
+- Pause Times: Consistently under 10ms regardless of heap size
+- Scalability: Handles heaps from 8MB to 16TB efficiently
+- Concurrency: Performs most work concurrently without stopping application threads
+- Load Balancing: Uses colored pointers technique for reference processing
+- Memory Overhead: Typically higher than G1GC
+- Java Version: Introduced in JDK 11, production-ready in JDK 15
+- Best For: Applications requiring extremely low pause times, large heaps, and latency-sensitive workloads
+
+# G1GC (Garbage-First Garbage Collector)
+
+- Design Focus: Balanced garbage collector optimizing for both throughput and latency
+- Pause Times: Longer than ZGC but predictable (typically tens to hundreds of milliseconds)
+- Scalability: Works well with medium to large heaps (4GB to 32GB)
+- Concurrency: Performs some but not all collection phases concurrently
+- Collection Strategy: Divides heap into regions, collecting regions with most garbage first
+- Memory Overhead: Lower than ZGC
+- Java Version: Introduced in JDK 7, default garbage collector since JDK 9
+- Best For: General purpose applications with moderate latency requirements
+
+# Mark and Sweep Algorithm
+- The Mark and Sweep algorithm is a fundamental garbage collection technique that operates in two phases:
+Mark Phase
+- Starting from "root" objects (objects directly referenced from program execution)
+- The garbage collector recursively traverses all object references
+- Each encountered object is "marked" as reachable (typically using a bit flag)
+- This process continues until all reachable objects have been marked
+
+# Sweep Phase
+
+- The garbage collector scans the entire heap memory
+- Any objects that were not marked during the mark phase are identified as garbage
+- These unmarked objects are "swept" (freed) from memory
+- Memory is then returned to the free memory pool for future allocations
+
+# Characteristics
+
+- Stop-the-World: Traditional implementations pause application threads during collection
+- Memory Fragmentation: Can lead to memory fragmentation over time
+- Variations: Modern GCs build on this with refinements like concurrent marking, incremental sweeping, and compaction phases
+- Pros: Handles cyclic references well
+- Cons: Basic implementation requires pausing application execution
